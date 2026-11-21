@@ -1,0 +1,36 @@
+ID,Title,Preconditions,Steps,Expected Result,Priority
+TC001,Login with valid standard user,Login page is available,Enter standard_user and secret_sauce; click Login,User is redirected to Products page,High
+TC002,Login with locked out user,Login page is available,Enter locked_out_user and secret_sauce; click Login,Clear locked-out error is displayed; user stays on login page,High
+TC003,Login with invalid password,Login page is available,Enter standard_user and an incorrect password,Authentication error is displayed,High
+TC004,Login with unknown username,Login page is available,Enter an unknown username and secret_sauce,Authentication error is displayed,High
+TC005,Submit empty login form,Login page is available,Leave username and password empty; click Login,Username required validation is displayed,High
+TC006,Submit password only,Login page is available,Enter password only; click Login,Username required validation is displayed,Med
+TC007,Submit username only,Login page is available,Enter username only; click Login,Password required validation is displayed,Med
+TC008,Password is masked,Login page is available,Type a password,Password characters are masked,Low
+TC009,Login error can be dismissed,An error is displayed,Click error close icon,Error banner disappears,Low
+TC010,Problem user inventory renders,Login page is available,Login as problem_user,Inventory page loads; visually inspect product images and controls for anomalies,Med
+TC011,Performance glitch user can login,Login page is available,Login as performance_glitch_user,User reaches inventory; record load duration and failures,Med
+TC012,Products page lists six products,Standard user is logged in,Inspect inventory list,Exactly six products are displayed,High
+TC013,Product detail opens,Standard user is logged in,Open a product title,Correct product detail page and information are shown,Med
+TC014,Sort products A to Z,Standard user is logged in,Select Name (A to Z),Product names are in ascending alphabetical order,Med
+TC015,Sort products Z to A,Standard user is logged in,Select Name (Z to A),Product names are in descending alphabetical order,Med
+TC016,Sort price low to high,Standard user is logged in,Select Price (low to high),Prices are in ascending numeric order,Med
+TC017,Sort price high to low,Standard user is logged in,Select Price (high to low),Prices are in descending numeric order,Med
+TC018,Add one product to cart,Standard user is logged in,Click Add to cart on one product,Cart badge displays 1; button changes to Remove,High
+TC019,Add multiple products,Standard user is logged in,Add two different products,Cart badge displays 2,High
+TC020,Remove product from inventory,A product is in cart,Click its Remove button on inventory page,Cart badge decrements and item is removed,High
+TC021,Cart displays selected product,At least one product is in cart,Open cart,"Correct product name, price and quantity are shown",High
+TC022,Remove item from cart,Cart contains an item,Click Remove for the item,Item disappears and cart count updates,High
+TC023,Continue shopping from cart,Cart page is open,Click Continue Shopping,User returns to inventory and cart state is retained,Med
+TC024,Checkout with empty cart,Cart is empty,Open cart and inspect checkout control; attempt checkout if enabled,Empty-cart behavior is consistent and no order is created,Med
+TC025,Checkout requires first name,Cart contains an item,Start checkout; leave first name blank; continue,First Name is required validation is shown,High
+TC026,Checkout requires last name,Cart contains an item,Start checkout; leave last name blank; continue,Last Name is required validation is shown,High
+TC027,Checkout requires postal code,Cart contains an item,Start checkout; leave postal code blank; continue,Postal Code is required validation is shown,High
+TC028,Checkout accepts valid customer data,Cart contains an item,"Enter first name, last name and postal code; continue",Checkout overview displays item and totals,High
+TC029,Finish checkout successfully,Checkout overview is displayed,Click Finish,Order confirmation message is displayed,High
+TC030,Back button after payment confirmation,Order confirmation page is displayed,Use browser Back button,No duplicate order is created; navigation behavior is safe and consistent,Med
+TC031,Checkout special characters in name,Cart contains an item,Enter permitted punctuation or Unicode in name fields and continue,Input is handled safely; no broken layout or unhandled error,Low
+TC032,Very long checkout input,Cart contains an item,Enter long strings in customer fields,Fields handle length safely without layout breakage,Low
+TC033,Cart persists while navigating,A product is in cart,Navigate inventory to cart and back,Cart contents remain consistent,Med
+TC034,Logout from inventory,Standard user is logged in,Open menu and click Logout,Login page is displayed and protected page is not accessible without login,High
+TC035,UI layout at narrow viewport,Login page is available,Resize viewport to mobile width and inspect login/inventory/cart,Controls remain visible and usable without unintended overlap,Low
